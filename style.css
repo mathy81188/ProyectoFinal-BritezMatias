@@ -1,179 +1,210 @@
+* {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1b1b1b;
+  height: 60px;
+  align-items: center;
+}
+
+.titulo {
+  font-size: 40px;
+  justify-self: start;
+  margin-left: 20px;
+  color: #d00f0f;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#verCarrito {
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 10px;
+  align-items: center;
+  display: flex;
+}
+
 
 #contenedorDiscografia {
-    display:flex;
-    width: 100%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 3%;
-    align-content: space-between;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 3%;
+  align-content: space-between;
 
 }
+
 .tarjetaDisco {
-    position: relative;
+  position: relative;
   width: 11.875em;
   height: 16.5em;
-  box-shadow: 0px 1px 13px rgba(143, 16, 16, 0.863);
+  box-shadow: 0px 0.9px 13px rgba(122, 118, 118, 0.863);
   cursor: pointer;
   transition: all 120ms;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ece7e7;
+  background: #978c8c;
   padding: 0.5em;
   padding-bottom: 3.4em;
- justify-content: space-around;
- align-content: space-around;
- flex-wrap: wrap;
- margin-bottom: 20px;
- margin: 20px;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin: 20px;
 
 }
 
 .tarjetaDisco::after {
-    content: "Añadir al Carrito"; 
-    padding-top: 1.25em;
-    padding-left: 1.25em;
-    position: absolute;
-    left: 0;
-    bottom: -60px;
-    background: #FF0072;
-    color: #fff;
-    height: 2.5em;
-    width: 90%;
-    transition: all 80ms;
-    font-weight: 600;
-    text-transform: uppercase;
-    opacity: 0;
-  }
-  .tarjetaDisco .tituloDisco {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    position: absolute;
-    left: 0.625em;
-    bottom: 1.875em;
-    font-weight: 400;
-    color: #000;
-  }
-  
-  .tarjetaDisco .precio-tarjeta {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 0.9em;
-    position: absolute;
-    left: 0.625em;
-    bottom: 0.625em;
-    color: #000;
-  }
-  
-  .tarjetaDisco:hover::after {
-    bottom: 0;
-    opacity: 1;
-  }
-  
-  .tarjetaDisco:active {
-    transform: scale(0.98);
-  }
-
-  .precio-tarjeta {
-    max-width: 55px;
-  }
-  
-  .tarjeta-imagen {
-    background: rgb(241, 241, 241);
-    width: 100%;
-    height: 70%;
-    display: grid;
-    place-items: center;
-    
-
-  } 
-.nodal-container{
-  align-items:normal;
-  justify-content: space-between;
-width: max-content;
- background-color: #FF0072;
-flex-direction: row-reverse;
- font-family: Arial, Helvetica, sans-serif;
-
+  content: "Añadir al Carrito";
+  padding-top: 1.25em;
+  padding-left: 1.25em;
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  background: #e71717;
+  color: #fff;
+  height: 2.5em;
+  width: 90%;
+  transition: all 80ms;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
 }
-.nodal-header{
-  flex-direction:column-reverse;
 
+.tarjetaDisco .tituloDisco {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.3em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 1.875em;
+  font-weight: 400;
+  color: #000;
 }
-.modal-content{
-  background-color: #fefefe;
-  margin: auto;
-  padding: 10px;
-  border: 1px solid #888;
-  align-content: center;
-   
 
+.tarjetaDisco .precio-tarjeta {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1em;
+  position: absolute;
+  left: 0.625em;
+  bottom: 0.625em;
+  color: #0e0c0c;
+  font-weight: 1000;
 }
-.total-content{
-  /* display: flex; */
-  align-self: center;
-  font-size: x-large;
-  color: #ece7e7;
- 
+
+.tarjetaDisco:hover::after {
+  bottom: 0;
+  opacity: 1;
+}
+
+.tarjetaDisco:active {
+  transform: scale(0.98);
+}
+
+.precio-tarjeta {
+  max-width: 55px;
+}
+
+.tarjeta-imagen {
+  background: rgb(241, 241, 241);
+  width: 100%;
+  height: 70%;
+  display: grid;
+  place-items: center;
 
 
 }
 
-.eliminar-unidad{
+.nodal-container {
+  width: 80%;
+  margin: 0 10%;
+  max-height: 88vh;
+  color: #f4f4f0;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  position:absolute;
+  z-index: 9;
+  scrollbar-color: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nodal-container::-webkit-scrollbar {
+  display: none;
+}
+
+.nodal-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0a0909;
+  color: #f5f6f3;
+  width: 100%;
+
+
+}
+
+.total-content {
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+.finalizar-compra {
+  color: #eef1eb;
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+  padding-top: 20px;
+  cursor: pointer;
+
+}
+
+.finalizar-compra:hover,
+.finalizar-compra:focus {
+  color: #cd1e1e;
+  float: right;
+
+
+}
+
+.nodal-header-button {
+  color: #eef1eb;
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+  padding-top: 20px;
   cursor: pointer;
 }
 
-.sumar{
-  cursor: pointer;
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 10px;
 }
-.restar{
+
+
+
+
+.eliminar-unidad {
   cursor: pointer;
 }
 
- button { 
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    display: inline-block;
-    text-align: center;
-    font-weight: bold;
-    padding: 0.7em 1em;
-    border: 3px solid #FF0072;
-    border-radius: 2px;
-    position:relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-    color: #FF0072;
-    text-decoration: none;
-    transition: 0.3s ease all;
-    z-index: 1;
-  }
-  
- button :before {
-    transition: 0.5s all ease;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: '';
-    background-color: #8d0c46;
-    z-index: -1;
-  }
-   
-  button:hover, button:focus {
-    color: rgb(187, 177, 177);
-  }
-  
-  button:hover:before, button:focus:before {
-    transition: 0.5s all ease;
-    left: 0;
-    right: 0;
-    opacity: 1;
-  }
-  
-  button:active {
-    transform: scale(0.9);
-  }
+.sumar {
+  cursor: pointer;
+}
 
+.restar {
+  cursor: pointer;
+}

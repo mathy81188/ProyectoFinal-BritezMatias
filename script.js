@@ -2,8 +2,9 @@
 fetch("./data.json")
   .then(respuesta => respuesta.json())
   .then(Productos => {
-    productosRenderizados(Productos)
-  })
+    productosRenderizados(Productos)  
+  } )
+
 
 let carrito = []
 let montoAPagar
@@ -46,6 +47,7 @@ function productosRenderizados(Productos) {
       let productoEnCarrito = carrito.findIndex(producto => producto.id == productoSeleccionado.id)
       carrito[productoEnCarrito].unidades++
       carrito[productoEnCarrito].subtotal = carrito[productoEnCarrito].precio * carrito[productoEnCarrito].unidades
+      
     } else {
       carrito.push({
         id: productoSeleccionado.id,
@@ -54,7 +56,6 @@ function productosRenderizados(Productos) {
         unidades: 1,
         subtotal: productoSeleccionado.precio
       })
-      sumarUnidad()
     }
     verProdCarrito()
     actualizarStorage()
@@ -66,20 +67,21 @@ verCarrito.addEventListener("click", verProdCarrito)
 function verProdCarrito(e) {
 
   nodalContainer.innerHTML = ""
-  nodalContainer.style.display = "flex"
+ nodalContainer.style.display = "flex"
   let nodalHeader = document.createElement("div")
   nodalHeader.className = "nodal-header"
 
   nodalContainer.append(nodalHeader)
 
-  let nodalButton = document.createElement("button")
+  let nodalButton = document.createElement("span")
   nodalButton.innerText = "x"
   nodalButton.className = "nodal-header-button"
 
   nodalHeader.append(nodalButton)
 
-  let finalizarCompraBoton = document.createElement("button")
-  finalizarCompraBoton.innerHTML = "Finalizar Compra"
+
+  let finalizarCompraBoton = document.createElement("h1")
+  finalizarCompraBoton.innerText = "Finalizar Compra"
   finalizarCompraBoton.className = "finalizar-compra"
 
   nodalHeader.append(finalizarCompraBoton)
@@ -89,8 +91,13 @@ function verProdCarrito(e) {
   nodalButton.addEventListener("click", () => {
     nodalContainer.style.display = "none"
 
-
   })
+  montoAPagar = carrito.reduce((acum, productoSeleccionado) => acum + productoSeleccionado.subtotal, 0)
+
+  let totalbuying = document.createElement("div")
+  totalbuying.classList = "total-content"
+  totalbuying.innerHTML = `Total: $${montoAPagar}`
+  nodalHeader.append(totalbuying)
 
 
   carrito.forEach((productoSeleccionado) => {
@@ -102,14 +109,17 @@ function verProdCarrito(e) {
         <span class=restar> - </span>
         <p>${productoSeleccionado.unidades}</p>
         <span class=sumar> + </span>
-        <P>Subtotal:$ ${productoSeleccionado.subtotal}</P>
+        <P>Subtotal: $${productoSeleccionado.subtotal}</P>
+        <span class=eliminar-unidad> ❌ </span>
         `
     nodalContainer.append(carritoContent)
 
     let restar = carritoContent.querySelector(".restar")
     restar.addEventListener("click", () => {
       if (productoSeleccionado.unidades !== 1) {
-        productoSeleccionado.unidades--
+        productoEnCarrito = carrito.findIndex(producto => producto.id == productoSeleccionado.id)
+        carrito[productoEnCarrito].unidades--
+        carrito[productoEnCarrito].subtotal = carrito[productoEnCarrito].precio * carrito[productoEnCarrito].unidades
         verProdCarrito()
         actualizarStorage()
       }
@@ -117,36 +127,29 @@ function verProdCarrito(e) {
     })
     let sumar = carritoContent.querySelector(".sumar")
     sumar.addEventListener("click", () => {
-      productoSeleccionado.unidades++
+      productoEnCarrito = carrito.findIndex(producto => producto.id == productoSeleccionado.id)
+      carrito[productoEnCarrito].unidades++
+      carrito[productoEnCarrito].subtotal = carrito[productoEnCarrito].precio * carrito[productoEnCarrito].unidades    
       actualizarStorage()
       verProdCarrito()
     })
 
-    let eliminarUnidad = document.createElement("div")
-    eliminarUnidad.className = "eliminar-unidad"
-    eliminarUnidad.innerText = "X"
-
-    carritoContent.appendChild(eliminarUnidad)
-    eliminarUnidad.addEventListener("click", eliminarUnidadCarrito)
+    let eliminarUnidad = carritoContent.querySelector(".eliminar-unidad")
+    eliminarUnidad.addEventListener("click", ()=>{
+      eliminarUnidadCarrito(productoSeleccionado.id)
+    })
   })
 
-
-  montoAPagar = carrito.reduce((acum, productoSeleccionado) => acum + productoSeleccionado.subtotal, 0)
-
-  let totalbuying = document.createElement("div")
-  totalbuying.classList = "total-content"
-  totalbuying.innerHTML = `Total: $${montoAPagar}`
-  nodalContainer.append(totalbuying)
 }
 
-let eliminarUnidadCarrito = () => {
-  let encontrarId = carrito.find((element) => element.id)
+let eliminarUnidadCarrito = (id) => {
+  let encontrarId = carrito.find((element) => element.id=== id)
 
   carrito = carrito.filter((carritoId) => {
     return carritoId !== encontrarId
 
   })
-  verProdCarrito(carrito)
+  verProdCarrito()
   actualizarStorage()
 }
 
@@ -161,7 +164,7 @@ function toast() {
     position: "center",
     stopOnFocus: false,
     style: {
-      background: "#FF0072",
+      background: "rgb(49, 157, 49)",
     },
     onClick: function () { }
   }).showToast();
