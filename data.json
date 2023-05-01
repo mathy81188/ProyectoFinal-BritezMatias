@@ -1,0 +1,16 @@
+[
+    { "id": 1, "articulo": "Madonna", "precio": 2000, "img": "https://akamai.sscdn.co/uploadfile/letras/albuns/8/d/5/9/108201678714489.jpg" },
+    { "id": 2, "articulo": "Like a Virgin", "precio": 2500, "img": "https://www.buenamusica.com/media/fotos/discos/m/madonna/madonna_like-a-virgin.jpg" },
+    { "id": 3, "articulo": "True Blue", "precio": 4000, "img": "https://hips.hearstapps.com/es.h-cdn.co/hares/images/cultura/ocio/portadas-de-discos-y-de-albums-de-musica-mas-importantes-del-s.xx/true-blue-madonna-1986/4247817-1-esl-ES/true-blue-madonna-1986.jpg" },
+    { "id": 4, "articulo": "Like a Payer", "precio": 3500, "img": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/518hoXm9MuL._SY300_SX300_QL70_ML2_.jpg" },
+    { "id": 5, "articulo": "Erotica", "precio": 2000, "img": "https://sss.radiomagica.com.pe/artistas/madonna/albums/erotica.jpg" },
+    { "id": 6, "articulo": "Bedtime Stories", "precio": 1500, "img": "https://www.buenamusica.com/media/fotos/discos/m/madonna/madonna_bedtime-stories.jpg" },
+    { "id": 7, "articulo": "Ray of Light", "precio": 2000, "img": "https://e.snmc.io/i/600/s/279f6d692689ed9f3adaf20390392401/6335522/madonna-ray-of-light-cover-art.jpg" },
+    { "id": 8, "articulo": "Music", "precio": 2500, "img": "https://upload.wikimedia.org/wikipedia/en/2/27/Music_Madonna.png" },
+    { "id": 9, "articulo": "American Life", "precio": 2000, "img": "https://www.telegraph.co.uk/content/dam/music/2018/08/07/madonna-3_trans_NvBQzQNjv4BqihVibxPbOwKDCDIL8LViR4w5veVbdRhF99LuhbGtFZ8.jpg?imwidth=480" },
+    { "id": 10, "articulo": "Confessions on a Dance Floor", "precio": 4000, "img": "https://i.pinimg.com/736x/b5/6f/32/b56f32cf8f0f26d7a29c75e25ce217f9--cd-cover-cover-art.jpg" },
+    { "id": 11, "articulo": "Hard Candy", "precio": 2500, "img": "https://www.rockandpop.cl/wp-content/uploads/2022/08/D_NQ_NP_679110-MLC48064026144_102021-O.jpg" },
+    { "id": 12, "articulo": "MDNA", "precio": 2500, "img": "https://upload.wikimedia.org/wikipedia/en/0/06/MDNA_Album_Cover.png" },
+    { "id": 13, "articulo": "Rebel Heart", "precio": 2500, "img": "https://www.gaytimes.co.uk/wp-content/uploads/2019/06/Rebel-Heart.jpg" },
+    { "id": 14, "articulo": "Madame X", "precio": 1500, "img": "https://jenesaispop.com/wp-content/uploads/2019/04/madamex.jpg" }
+  ]
