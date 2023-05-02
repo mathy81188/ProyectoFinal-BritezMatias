@@ -2,7 +2,7 @@
 fetch("./data.json")
   .then(respuesta => respuesta.json())
   .then(Productos => {
-    productosRenderizados(Productos)  
+    productosRenderizados(Productos) 
   } )
 
 
@@ -34,14 +34,14 @@ function productosRenderizados(Productos) {
 `
     contenedorDiscografia.appendChild(tarjetaDisco)
     botonComprar = document.getElementById(producto.id)
-    botonComprar.addEventListener("click", agregarAlCarrito)
+    botonComprar.addEventListener("click", (e)=> agregarAlCarrito(e, Productos))
 
   }
 
+}
 
-
-  function agregarAlCarrito(e) {
-    productoSeleccionado = Productos.find(producto => producto.id === Number(e.target.id))
+  function agregarAlCarrito(e, prods) {
+    productoSeleccionado = prods.find(producto => producto.id === Number(e.target.id))
     toast()
     if (carrito.some(producto => producto.id === productoSeleccionado.id)) {
       let productoEnCarrito = carrito.findIndex(producto => producto.id == productoSeleccionado.id)
@@ -57,10 +57,10 @@ function productosRenderizados(Productos) {
         subtotal: productoSeleccionado.precio
       })
     }
-    verProdCarrito()
+  verProdCarrito()
     actualizarStorage()
   }
-}
+
 
 verCarrito.addEventListener("click", verProdCarrito)
 
