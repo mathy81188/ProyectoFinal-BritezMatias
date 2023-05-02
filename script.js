@@ -57,7 +57,6 @@ function productosRenderizados(Productos) {
         subtotal: productoSeleccionado.precio
       })
     }
-  verProdCarrito()
     actualizarStorage()
   }
 
