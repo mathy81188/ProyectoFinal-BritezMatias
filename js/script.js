@@ -2,8 +2,9 @@
 fetch("./data/data.json")
   .then(respuesta => respuesta.json())
   .then(Productos => {
-    productosRenderizados(Productos)
+   productosRenderizados(Productos)
   })
+  .catch(error => error())
 
 
 let carrito = []
@@ -88,7 +89,7 @@ function verProdCarrito(e) {
 
   nodalButton.addEventListener("click", () => {
     nodalContainer.style.display = "none"
-
+   
   })
   montoAPagar = carrito.reduce((acum, productoSeleccionado) => acum + productoSeleccionado.subtotal, 0)
 
@@ -186,5 +187,15 @@ function finalizarCompra() {
   carrito = []
 
 }
+
+function error() {
+  Swal.fire({
+    icon: 'error',
+    text: 'Hubo un error al cargar la pagina, vuelva a intentarlo mas tarde',
+  })
+}
+
+
+
 
 
