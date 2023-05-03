@@ -1,0 +1,16 @@
+[
+    { "id": 1, "articulo": "Madonna", "precio": 2000, "img": "./img/discografia/Madonna.jpg" },
+    { "id": 2, "articulo": "Like a Virgin", "precio": 2500, "img": "./img/discografia/likeavirgin.jpg" },
+    { "id": 3, "articulo": "True Blue", "precio": 4000, "img": "./img/discografia/trueblue.jpg" },
+    { "id": 4, "articulo": "Like a Payer", "precio": 3500, "img": "./img/discografia/likeaprayer.jpg" },
+    { "id": 5, "articulo": "Erotica", "precio": 2000, "img": "./img/discografia/erotica.jpg" },
+    { "id": 6, "articulo": "Bedtime Stories", "precio": 1500, "img": "./img/discografia/bedtimestories.jpg" },
+    { "id": 7, "articulo": "Ray of Light", "precio": 2000, "img": "./img/discografia/rayoflight.jpg" },
+    { "id": 8, "articulo": "Music", "precio": 2500, "img": "./img/discografia/music.jpg" },
+    { "id": 9, "articulo": "American Life", "precio": 2000, "img": "./img/discografia/americanlife.jpg" },
+    { "id": 10, "articulo": "Confessions on a Dance Floor", "precio": 4000, "img": "./img/discografia/confessions.jpg" },
+    { "id": 11, "articulo": "Hard Candy", "precio": 2500, "img": "./img/discografia/hardcandy.jpg" },
+    { "id": 12, "articulo": "MDNA", "precio": 2500, "img": "./img/discografia/mdna.jpg" },
+    { "id": 13, "articulo": "Rebel Heart", "precio": 2500, "img": "./img/discografia/rebelheart.jpg" },
+    { "id": 14, "articulo": "Madame X", "precio": 1500, "img": "./img/discografia/madamex.jpg" }
+  ]

@@ -1,9 +1,9 @@
 
-fetch("./data.json")
+fetch("./data/data.json")
   .then(respuesta => respuesta.json())
   .then(Productos => {
-    productosRenderizados(Productos) 
-  } )
+    productosRenderizados(Productos)
+  })
 
 
 let carrito = []
@@ -34,31 +34,30 @@ function productosRenderizados(Productos) {
 `
     contenedorDiscografia.appendChild(tarjetaDisco)
     botonComprar = document.getElementById(producto.id)
-    botonComprar.addEventListener("click", (e)=> agregarAlCarrito(e, Productos))
+    botonComprar.addEventListener("click", (e) => agregarAlCarrito(e, Productos))
 
   }
 
 }
 
-  function agregarAlCarrito(e, prods) {
-    productoSeleccionado = prods.find(producto => producto.id === Number(e.target.id))
-    toast()
-    if (carrito.some(producto => producto.id === productoSeleccionado.id)) {
-      let productoEnCarrito = carrito.findIndex(producto => producto.id == productoSeleccionado.id)
-      carrito[productoEnCarrito].unidades++
-      carrito[productoEnCarrito].subtotal = carrito[productoEnCarrito].precio * carrito[productoEnCarrito].unidades
-      
-    } else {
-      carrito.push({
-        id: productoSeleccionado.id,
-        articulo: productoSeleccionado.articulo,
-        precio: productoSeleccionado.precio,
-        unidades: 1,
-        subtotal: productoSeleccionado.precio
-      })
-    }
-    actualizarStorage()
+function agregarAlCarrito(e, prods) {
+  productoSeleccionado = prods.find(producto => producto.id === Number(e.target.id))
+  toast()
+  if (carrito.some(producto => producto.id === productoSeleccionado.id)) {
+    let productoEnCarrito = carrito.findIndex(producto => producto.id == productoSeleccionado.id)
+    carrito[productoEnCarrito].unidades++
+    carrito[productoEnCarrito].subtotal = carrito[productoEnCarrito].precio * carrito[productoEnCarrito].unidades
+  } else {
+    carrito.push({
+      id: productoSeleccionado.id,
+      articulo: productoSeleccionado.articulo,
+      precio: productoSeleccionado.precio,
+      unidades: 1,
+      subtotal: productoSeleccionado.precio
+    })
   }
+  actualizarStorage()
+}
 
 
 verCarrito.addEventListener("click", verProdCarrito)
@@ -66,7 +65,7 @@ verCarrito.addEventListener("click", verProdCarrito)
 function verProdCarrito(e) {
 
   nodalContainer.innerHTML = ""
- nodalContainer.style.display = "flex"
+  nodalContainer.style.display = "flex"
   let nodalHeader = document.createElement("div")
   nodalHeader.className = "nodal-header"
 
@@ -128,13 +127,13 @@ function verProdCarrito(e) {
     sumar.addEventListener("click", () => {
       productoEnCarrito = carrito.findIndex(producto => producto.id == productoSeleccionado.id)
       carrito[productoEnCarrito].unidades++
-      carrito[productoEnCarrito].subtotal = carrito[productoEnCarrito].precio * carrito[productoEnCarrito].unidades    
+      carrito[productoEnCarrito].subtotal = carrito[productoEnCarrito].precio * carrito[productoEnCarrito].unidades
       actualizarStorage()
       verProdCarrito()
     })
 
     let eliminarUnidad = carritoContent.querySelector(".eliminar-unidad")
-    eliminarUnidad.addEventListener("click", ()=>{
+    eliminarUnidad.addEventListener("click", () => {
       eliminarUnidadCarrito(productoSeleccionado.id)
     })
   })
@@ -142,7 +141,7 @@ function verProdCarrito(e) {
 }
 
 let eliminarUnidadCarrito = (id) => {
-  let encontrarId = carrito.find((element) => element.id=== id)
+  let encontrarId = carrito.find((element) => element.id === id)
 
   carrito = carrito.filter((carritoId) => {
     return carritoId !== encontrarId
