@@ -2,9 +2,16 @@
   margin: 0;
 }
 
+.fondo {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  object-fit: contain;
+
+}
 
 header {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   background-color: #1b1b1b;
   height: 60px;
@@ -37,7 +44,6 @@ header {
   flex-wrap: wrap;
   margin-top: 3%;
   align-content: space-between;
-
 }
 
 .tarjetaDisco {
@@ -58,7 +64,6 @@ header {
   flex-wrap: wrap;
   margin-bottom: 20px;
   margin: 20px;
-
 }
 
 .tarjetaDisco::after {
@@ -131,7 +136,7 @@ header {
   flex-direction: column;
   align-items: center;
   overflow: auto;
-  position:absolute;
+  position: absolute;
   z-index: 9;
   scrollbar-color: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -173,8 +178,6 @@ header {
 .finalizar-compra:focus {
   color: #cd1e1e;
   float: right;
-
-
 }
 
 .nodal-header-button {
@@ -196,8 +199,6 @@ header {
 }
 
 
-
-
 .eliminar-unidad {
   cursor: pointer;
 }
@@ -208,4 +209,16 @@ header {
 
 .restar {
   cursor: pointer;
+}
+
+footer {
+  height: 35px;
+  background-color: #1b1b1b;
+  margin-bottom: 0%;
+
+}
+
+.youtube {
+  display: flex;
+  justify-content: center;
 }

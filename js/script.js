@@ -2,7 +2,7 @@
 fetch("./data/data.json")
   .then(respuesta => respuesta.json())
   .then(Productos => {
-   productosRenderizados(Productos)
+    productosRenderizados(Productos)
   })
   .catch(error => error())
 
@@ -57,6 +57,7 @@ function agregarAlCarrito(e, prods) {
       subtotal: productoSeleccionado.precio
     })
   }
+  verProdCarrito()
   actualizarStorage()
 }
 
@@ -89,7 +90,7 @@ function verProdCarrito(e) {
 
   nodalButton.addEventListener("click", () => {
     nodalContainer.style.display = "none"
-   
+
   })
   montoAPagar = carrito.reduce((acum, productoSeleccionado) => acum + productoSeleccionado.subtotal, 0)
 
