@@ -3,10 +3,8 @@
 }
 
 .fondo {
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  object-fit: contain;
+  width: 100%;
+    object-fit: cover;
 
 }
 
@@ -211,7 +209,7 @@ header {
   cursor: pointer;
 }
 
-footer {
+.pie{
   height: 35px;
   background-color: #1b1b1b;
   margin-bottom: 0%;
